@@ -11,3 +11,5 @@ make: compiles the given source files to the shared and static libraries, libfil
 make staticCompile: creates the driverStatic output program file, illustrating the static linking, which is a test driver file which can be executed by ./driverStatic
 
 make sharedCompile: creates the driverShared output program file, illustrating the dynamic linking, which is a test driver file can be executed by ./driverShared
+
+Note make clean first if any error encountered
