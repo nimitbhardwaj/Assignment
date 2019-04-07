@@ -9,12 +9,14 @@ FileDescList::FileDescList() {
 
 FileDescList::FileDescList(const FileDesc &fle) {
     size = 1;
+    isInit = 99;
     root = new LinkedList;
     root->f = fle;
     root->next = nullptr;
 }
 
 void FileDescList::insertNode(const FileDesc &fle) {
+    isInit = 99;
     size += 1;
     LinkedList *present = root, *par = nullptr;
     LinkedList *newNode = new LinkedList;
@@ -34,6 +36,7 @@ void FileDescList::insertNode(const FileDesc &fle) {
 }
 
 FileDescList::~FileDescList() {
+    if (isInit != 99) return;
     LinkedList *present = root, *next = root->next;
     while(next != nullptr) {
         delete present;

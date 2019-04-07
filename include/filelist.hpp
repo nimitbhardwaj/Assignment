@@ -10,7 +10,7 @@ class FileDescList {
         FileDesc f;
     } LinkedList;
     LinkedList *root;
-
+    int isInit;
     void mergeSort(LinkedList **root);
     LinkedList *sortedMerge(LinkedList *a, LinkedList *b);
     void splitList(LinkedList *source, LinkedList **frontRef, LinkedList **backRef);

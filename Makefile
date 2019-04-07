@@ -5,7 +5,7 @@ default:
 	# static library
 	ar rcs ./bin/libfiledescription.a ./bin/filedesc.o ./bin/filelist.o
 	# dynamic library
-	g++  -shared ./bin/* -o ./bin/libfiledescription.so
+	g++  -shared -fPIC ./bin/*.o -o ./bin/libfiledescription.so
 
 clean:
 	rm ./bin/*
@@ -15,4 +15,4 @@ staticCompile:
 
 sharedCompile:
 	g++ driver.cpp -I./include -L./bin -lfiledescription  -o driverShared
-	export LD_LIBRARY_PATH=./bin
+	export LD_LIBRARY_PATH=./bin/
